@@ -29,5 +29,22 @@ public class TestController {
         return model;
     }
 
+    @RequestMapping(value = "/show", method = RequestMethod.GET)
+    public TestModel getById(@RequestParam Integer age) {
+        TestModel model = new TestModel();
+        model.setName("serve a");
+        model.setAge(age);
+        model.setId("id");
+        return model;
+    }
+
+    // post
+
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    public TestModel postUserById(@RequestBody TestModel model) {
+        model.setName("This is serva a!");
+        return model;
+    }
+
 
 }
